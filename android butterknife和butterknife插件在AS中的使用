@@ -1,0 +1,4 @@
+1.向你的工程中添加依赖compile 'com.jakewharton:butterknife:8.2.1' 这样就可以使用注解的方式了
+2.在AS中下载Android Butterknife Zelezny 插件
+3.一键生成注解的方式:在你的setContentView(R.layout.activity_main)中选中activity_main,
+  然后alt+insert选择Generate Butterknife Injections即可一键生成
