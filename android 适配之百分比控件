@@ -1,0 +1,26 @@
+1.向你的项目添加依赖: compile 'com.android.support:percent:22.2.0'
+**两种布局PercentRelativeLayout、PercentFrameLayout，通过名字就可以看出，这是继承自FrameLayout和RelativeLayout两个容器类；
+**支持的属性:
+  layout_widthPercent、layout_heightPercent、
+  layout_marginPercent、layout_marginLeftPercent、
+  layout_marginTopPercent、layout_marginRightPercent、
+  layout_marginBottomPercent、layout_marginStartPercent、layout_marginEndPercent
+2.开始xml编写
+     <android.support.percent.PercentFrameLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        app:layout_marginTopPercent="25%"
+        app:layout_marginLeftPercent="25%"/>
+
+</android.support.percent.PercentFrameLayout>
