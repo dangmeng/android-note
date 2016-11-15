@@ -1,0 +1,30 @@
+LocalBroadCast 本地广播，跟BroadCastReceiver使用一样，但是比它的安全性更高、速度更快。
+
+1.发送一条广播消息
+  LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent("test"));
+
+2.在你要接收消息的activity里面这样写：
+  
+  private LocalBroadcastManager localBroadcastManager;
+  private BroadcastReceiver recerver = new BroadcastReceiver() {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			if (intent.getAction().equals("test")) {
+				//写一些逻辑
+			}
+		}
+	};
+  
+  ##在oncreate（）里面实例化LocalBroadcastManager 并且注册receiver。
+  localBroadcastManager = LocalBroadcastManager.getInstance(this);
+	IntentFilter intentFilter = new IntentFilter();
+	intentFilter.addAction("test");
+	localBroadcastManager.registerReceiver(recerver, intentFilter);
+  
+  ##在onDestroy（）里面取消注册
+  localBroadcastManager.unregisterReceiver(recerver);
+  
+  
+  
+  
